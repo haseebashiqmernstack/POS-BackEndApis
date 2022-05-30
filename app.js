@@ -8,6 +8,7 @@ const clientRouter=require('./routers/clientRouter');
 const employeRouter=require('./routers/employeRouter');
 const productRouter=require('./routers/productRouter');
 const catagoryRouter=require('./routers/catagoryRouter');
+const cartRouter=require('./routers/cartRouter');
 const app = express();
 // {useCreateIndex:true,useFindAndModify:false,useNewUrlParser:true,useUnifiedTopology:true}
 mongoose.connect("mongodb+srv://haseeb-ashiq:j1A6L5ls8IsK7d29@cluster0.6dnqg.mongodb.net/POS?retryWrites=true&w=majority")
@@ -23,4 +24,5 @@ app.use('/api',clientRouter);
 app.use('/api',employeRouter);
 app.use('/api',productRouter);
 app.use('/api',catagoryRouter);
+app.use('/api',cartRouter);
 app.listen(port,()=>{console.log(`server is running on port => ${port}`)})
